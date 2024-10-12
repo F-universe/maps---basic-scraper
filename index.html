@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Scraper</title>
+</head>
+<body>
+    <h1>Cerca un luogo su Google Maps</h1>
+    <form method="POST" action="/search">
+        <input type="text" name="query" placeholder="Inserisci il nome del luogo">
+        <button type="submit">Cerca</button>
+    </form>
+
+    <h2>Risultati della ricerca</h2>
+    {% if results %}
+    <ul>
+        <li>Classe 'aFsglc': Trovata: {{ results[0]['class_1'] }}</li>
+        <li>Classe 'w6VYqd': Trovata: {{ results[0]['class_2'] }}</li>
+        <li>Contenuto scaricato: {{ found_text }}</li>
+    </ul>
+    {% else %}
+    <p>Nessun risultato trovato</p>
+    {% endif %}
+</body>
+</html>
